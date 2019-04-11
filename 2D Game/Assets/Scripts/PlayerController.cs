@@ -28,32 +28,50 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.A))
-        {
-            GetComponent<Rigidbody>().AddForce(Vector3.right * -WalkSpeed * Time.deltaTime);
-            PlayerSprite.flipX = true;
-            if(isGrounded == true)
+        //if(Input.GetKey(KeyCode.A))
+        //{
+        //    GetComponent<Rigidbody>().AddForce(Vector3.right * -WalkSpeed * Time.deltaTime);
+        //    PlayerSprite.flipX = true;
+        //    if(isGrounded == true)
+        //    {
+        //        anim.SetBool("isWalk", true);
+        //    }
+
+        //}
+
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    GetComponent<Rigidbody>().AddForce(Vector3.right * WalkSpeed * Time.deltaTime);
+        //    PlayerSprite.flipX = false;
+
+        //    if (isGrounded == true)
+        //    {
+        //        anim.SetBool("isWalk", true);
+        //    }
+        //}
+
+        //if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
+        //{
+        //    anim.SetBool("isWalk", false);
+        //}
+
+        Vector3 Direction = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+
+
+
+        GetComponent<Rigidbody>().AddForce(Direction * WalkSpeed * Time.deltaTime);
+            if(Direction.x < 0)
             {
-                anim.SetBool("isWalk", true);
+                PlayerSprite.flipX = true;
+            }
+            else if (Direction.x > 0)
+            {
+                PlayerSprite.flipX = false;
             }
 
-        }
+        anim.SetFloat("Speed", Mathf.Abs(Direction.x));
+       // anim.SetFloat("Attack");
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            GetComponent<Rigidbody>().AddForce(Vector3.right * WalkSpeed * Time.deltaTime);
-            PlayerSprite.flipX = false;
-
-            if (isGrounded == true)
-            {
-                anim.SetBool("isWalk", true);
-            }
-        }
-        
-        if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
-        {
-            anim.SetBool("isWalk", false);
-        }
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {

@@ -60,3 +60,6 @@ TagManager:
   - name: Character
     uniqueID: 3097355669
     locked: 0
+  - name: Lighting
+    uniqueID: 473123801
+    locked: 0

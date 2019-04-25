@@ -45,14 +45,14 @@ public class Enemy_Control : MonoBehaviour
             if (Physics.Raycast(RayOffSet + transform.position, -Vector3.up , groundCheckRange, groundLayer))
             {
                 
-                Debug.Log("Walking1");
+                //Debug.Log("Walking1");
                 //Walk Left check Cliff On Left
                 GetComponent<Rigidbody>().AddForce(Vector3.right * -WalkSpeed * Time.deltaTime);
                 EnemySprite.flipX = true;
             } else
             {
                 
-                Debug.Log("YOOO1");
+                //Debug.Log("YOOO1");
                 ISWalkingLeft = false;
                 GetComponent<Rigidbody>().velocity = Vector3.zero;
             }
@@ -65,7 +65,7 @@ public class Enemy_Control : MonoBehaviour
             if (Physics.Raycast(-RayOffSet + transform.position, -Vector3.up , groundCheckRange, groundLayer))
             {
                 
-                Debug.Log("Walking2");
+                //Debug.Log("Walking2");
                 //Walk Left check Cliff On Left
                 GetComponent<Rigidbody>().AddForce(Vector3.right * WalkSpeed * Time.deltaTime);
                 EnemySprite.flipX = false;
@@ -73,7 +73,7 @@ public class Enemy_Control : MonoBehaviour
             else
             {
                 
-                Debug.Log("YOOO2");
+               // Debug.Log("YOOO2");
                 ISWalkingLeft = true;
                 GetComponent<Rigidbody>().velocity = Vector3.zero;
             }
@@ -85,7 +85,7 @@ public class Enemy_Control : MonoBehaviour
         Debug.DrawRay(transform.position, direction * wallCheckRange, Color.cyan);
         if (Physics.Raycast(transform.position, direction, wallCheckRange, wallLayer))
         {
-            Debug.Log("Wall1");
+            //Debug.Log("Wall1");
             if (ISWalkingLeft)
             {
                 ISWalkingLeft = false;

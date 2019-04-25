@@ -60,7 +60,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Camera_Pan.cs" />
+    <Compile Include="Assets\Door_Open.cs" />
     <Compile Include="Assets\Enemy_Control.cs" />
+    <Compile Include="Assets\Follow_Player.cs" />
     <Compile Include="Assets\Scripts\Animation\LookAt.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Loading.cs" />

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Parallax_BG : MonoBehaviour
 {
 
-    public int HP = 100;
     public float WalkSpeed = 300.5f;
     public float JumpForce = 500f;
     public SpriteRenderer BGSprite;

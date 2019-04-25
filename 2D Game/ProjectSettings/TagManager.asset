@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - 
   - PostProcessing
   - Ground
-  - 
+  - Wall
   - 
   - 
   - 
@@ -40,4 +41,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 4000346269
+    locked: 0
+  - name: Parallax3
+    uniqueID: 1301701199
+    locked: 0
+  - name: Parallax2
+    uniqueID: 848882593
+    locked: 0
+  - name: Parallax1
+    uniqueID: 3441477855
+    locked: 0
+  - name: Tile
+    uniqueID: 450254193
+    locked: 0
+  - name: Character
+    uniqueID: 3097355669
     locked: 0

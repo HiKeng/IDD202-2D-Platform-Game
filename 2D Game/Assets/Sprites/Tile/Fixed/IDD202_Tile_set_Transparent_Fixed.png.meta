@@ -1,0 +1,498 @@
+fileFormatVersion: 2
+guid: 8582f191766c128489f7954fe73fac3e
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: IDD202_Tile_set_Transparent_Fixed_0
+    21300002: IDD202_Tile_set_Transparent_Fixed_1
+    21300004: IDD202_Tile_set_Transparent_Fixed_2
+    21300006: IDD202_Tile_set_Transparent_Fixed_3
+    21300008: IDD202_Tile_set_Transparent_Fixed_4
+    21300010: IDD202_Tile_set_Transparent_Fixed_5
+    21300012: IDD202_Tile_set_Transparent_Fixed_6
+    21300014: IDD202_Tile_set_Transparent_Fixed_7
+    21300016: IDD202_Tile_set_Transparent_Fixed_8
+    21300018: IDD202_Tile_set_Transparent_Fixed_9
+    21300020: IDD202_Tile_set_Transparent_Fixed_10
+    21300022: IDD202_Tile_set_Transparent_Fixed_11
+    21300024: IDD202_Tile_set_Transparent_Fixed_12
+    21300026: IDD202_Tile_set_Transparent_Fixed_13
+    21300028: IDD202_Tile_set_Transparent_Fixed_14
+    21300030: IDD202_Tile_set_Transparent_Fixed_15
+    21300032: IDD202_Tile_set_Transparent_Fixed_16
+    21300034: IDD202_Tile_set_Transparent_Fixed_17
+    21300036: IDD202_Tile_set_Transparent_Fixed_18
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 454
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef2290e333d0814a8e61d041e5b956d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_1
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 454
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b72b00b8b1774614a801fc5cfb79015b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_2
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 454
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e1cc9e9b5bb4643b503bee3bdafe64
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_3
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 454
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cf028cf97a5e6e4fbb0554c43d98a49
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_4
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 454
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1f7f4d9f253ee4ca5d51a5343c247e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_5
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 454
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff8e7c50df93664e99e2a648471e8cc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_6
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 454
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0709c48675d607143b584fc0a64fe275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 227
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aba6455757f8f44d9d6e70c2e35ec0b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_8
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 227
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3b91f5b5b397e4ba57b28bee0ccea1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_9
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 227
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b268fb30ea52b04f877443c92fabee9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_10
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 227
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c647a6d514b232a4394844b1c67e286f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_11
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 227
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb426ec4eb5702246b1103e92b0dbaf0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_12
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 227
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28a57297e2afe9458ca52e21304da3a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_13
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 227
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6650b2df6a63ce4d905995a7e044c39
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f947adbb95e8bf4aa2687516a26be51
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_15
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 0
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba071587c659af498506d111a541cfe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_16
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 0
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 084a9c1ff46e712468287ff9fc8cb17a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_17
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 0
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe0287b12b5959d43b3a732f456756d5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IDD202_Tile_set_Transparent_Fixed_18
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 0
+        width: 227
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd759a97eb1f964088f354b1356e10d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 55c028d320291d64185f79bc50f005f6
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

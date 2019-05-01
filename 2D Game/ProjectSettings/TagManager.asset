@@ -60,6 +60,9 @@ TagManager:
   - name: Character
     uniqueID: 3097355669
     locked: 0
+  - name: Particle_Front
+    uniqueID: 2558324571
+    locked: 0
   - name: Lighting
     uniqueID: 473123801
     locked: 0

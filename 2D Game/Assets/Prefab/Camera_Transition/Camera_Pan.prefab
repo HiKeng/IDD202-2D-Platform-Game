@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 549370217}
   - component: {fileID: 549370218}
-  m_Layer: 9
+  - component: {fileID: 990733207}
+  - component: {fileID: 990733206}
+  m_Layer: 0
   m_Name: Camera_Pan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 549370216}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.30340767, y: 2.6986256, z: -0.11218412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -42,5 +44,30 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30.368578, y: 8.351485, z: 0.2}
-  m_Center: {x: 12.8663225, y: -0.13908148, z: 0}
+  m_Size: {x: 28.121765, y: 13.222971, z: 0.2}
+  m_Center: {x: 11.742916, y: 3.986085, z: 0}
+--- !u!65 &990733207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549370216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 3.5596151, y: 2.6046321, z: 1}
+  m_Center: {x: 1.2798076, y: -3.9275184, z: 0}
+--- !u!114 &990733206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549370216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5815ac3e26b280749aada419d6ce543a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

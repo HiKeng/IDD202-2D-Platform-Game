@@ -58,8 +58,7 @@ public class PlayerController : MonoBehaviour
         Vector3 Direction = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
 
 
-
-        GetComponent<Rigidbody>().AddForce(Direction * WalkSpeed * Time.deltaTime);
+        GetComponent<Rigidbody>().AddForce(Direction * WalkSpeed * Time.deltaTime * 2);
             if(Direction.x < 0)
             {
                 PlayerSprite.flipX = true;
@@ -79,7 +78,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //isGrounded = Physics.Raycast(transform.position, -Vector3.up, groundCheckRange, groundLayer);
-        //Debug.DrawRay(transform.position, Vector3.up * groundCheckRange);
+       Debug.DrawRay(transform.position, Vector3.up * groundCheckRange);
 
         isGrounded = Physics.CheckSphere(GroundChecker.position, groundCheckRange, groundLayer);
 

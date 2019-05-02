@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 972264053}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2894621585019347025}
   - component: {fileID: 2894621585019347024}
   - component: {fileID: 2894621585019347021}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlayerCharacter
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -123,9 +123,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.79031444
-  m_Height: 2.104357
+  m_Height: 2.0465388
   m_Direction: 1
-  m_Center: {x: -0.027709246, y: -0.052178502, z: 0}
+  m_Center: {x: -0.027709246, y: -0.023269415, z: 0}
 --- !u!54 &2894621585019347024
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2894621585019347027}
   serializedVersion: 2
-  m_Mass: 10
+  m_Mass: 15
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -154,10 +154,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d33c6557ecc4b74c8bae9924ab13842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAlive: 1
   HP: 100
-  WalkSpeed: 5000
-  JumpForce: 4000
+  InvincibilityTimer: 1
+  WalkSpeed: 2000
+  JumpForce: 5000
   PlayerSprite: {fileID: 2894621585921559444}
+  isWalkLeft: 0
+  Bullet: {fileID: 0}
+  CanAttack: 0
   anim: {fileID: 0}
   GroundChecker: {fileID: 972264053}
   isGrounded: 0
@@ -177,7 +182,7 @@ GameObject:
   - component: {fileID: 2894621585921559446}
   - component: {fileID: 2894621585921559444}
   - component: {fileID: 2894621585921559447}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpriteSheet_Transparent_4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

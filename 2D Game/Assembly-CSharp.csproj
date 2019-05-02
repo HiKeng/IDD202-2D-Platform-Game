@@ -65,6 +65,7 @@
     <Compile Include="Assets\Enemy_Control.cs" />
     <Compile Include="Assets\Follow_Player.cs" />
     <Compile Include="Assets\Scripts\Animation\LookAt.cs" />
+    <Compile Include="Assets\Scripts\Bullet\BulletController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Loading.cs" />
     <Compile Include="Assets\Scripts\Parallax\Parallax_BG.cs" />

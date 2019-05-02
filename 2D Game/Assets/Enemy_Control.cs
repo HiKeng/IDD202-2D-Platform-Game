@@ -18,7 +18,8 @@ public class Enemy_Control : MonoBehaviour
     public Vector3 RayOffSet = Vector3.left;
 
     public float wallCheckRange = 1f;
-    
+
+    public GameObject Bullet;
 
     // Start is called before the first frame update
     void Start()

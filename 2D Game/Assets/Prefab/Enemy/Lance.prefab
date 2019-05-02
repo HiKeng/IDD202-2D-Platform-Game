@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5183821297159804365}
   - component: {fileID: 5183821297159804364}
   - component: {fileID: 5183821297159804363}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Lance
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5183821297159804361}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 37.03, y: -1.5707679, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -157,3 +157,4 @@ MonoBehaviour:
   EnemySprite: {fileID: 5183821297159804367}
   RayOffSet: {x: -1, y: 0, z: 0}
   wallCheckRange: 1
+  Bullet: {fileID: 0}

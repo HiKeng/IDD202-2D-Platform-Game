@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float InvincibilityTimer = 1f;
     public float WalkSpeed = 300.5f;
     public float JumpForce = 500f;
+    public float DownForce = 600f;
     public SpriteRenderer PlayerSprite;
 
     public bool isWalkLeft = false;
@@ -27,16 +28,26 @@ public class PlayerController : MonoBehaviour
 
     public bool isWalking;
 
+    public Transform Gun_Position;
+    private float Fire_CooldownCount;
+    public float Fire_Cooldown;
+
+    public bool isCharging = false;
+    public float MaxChargeTime;
+    public float ChargeTimeCount;
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        isCharging = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(Fire_CooldownCount);
+    
         if(!isAlive)
         {
             return;
@@ -70,55 +81,100 @@ public class PlayerController : MonoBehaviour
         //{
         //    anim.SetBool("isWalk", false);
         //}
+        if(Input.GetKey(KeyCode.LeftControl) && isGrounded == true)
+        {
+            isCharging = true;
+            GetComponent<Rigidbody>().mass = 999;
+        }
 
-        Vector3 Direction = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-        GetComponent<Rigidbody>().AddForce(Direction * WalkSpeed * Time.deltaTime, ForceMode.VelocityChange);
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            isCharging = false;
+            GetComponent<Rigidbody>().mass = 15;
 
-        GetComponent<Rigidbody>().AddForce(Direction * WalkSpeed * Time.deltaTime * 2);
-            if(Direction.x < 0)
+        }
+
+        if(isCharging != true)
+        {
+            Vector3 Direction = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+            GetComponent<Rigidbody>().AddForce(Direction * WalkSpeed * Time.deltaTime, ForceMode.VelocityChange);
+
+            GetComponent<Rigidbody>().AddForce(Direction * WalkSpeed * Time.deltaTime * 2);
+            if (Direction.x < 0)
             {
                 PlayerSprite.flipX = true;
-            isWalkLeft = true;
+                isWalkLeft = true;
             }
             else if (Direction.x > 0)
             {
                 PlayerSprite.flipX = false;
-            isWalkLeft = false;
+                isWalkLeft = false;
+            }
+
+            anim.SetFloat("Speed", Mathf.Abs(Direction.x));
+            // anim.SetFloat("Attack");
+
+
+            if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+            {
+                GetComponent<Rigidbody>().AddForce(Vector3.up * JumpForce);
+            }
+
+            if (Input.GetKeyDown(KeyCode.S) && isGrounded == false)
+            {
+                GetComponent<Rigidbody>().AddForce(Vector3.down * DownForce);
+            }
         }
 
-        anim.SetFloat("Speed", Mathf.Abs(Direction.x));
-       // anim.SetFloat("Attack");
+        
 
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        // Fire Bullet
+        if (Input.GetMouseButtonDown(0))
         {
-        GetComponent<Rigidbody>().AddForce(Vector3.up * JumpForce); 
+            if (Fire_CooldownCount <= 0)
+            {
+                GameObject NewBullte = Instantiate(Bullet, Gun_Position.position, Quaternion.identity);
+
+                NewBullte.GetComponent<BulletController>().isMovingLeft = isWalkLeft;
+
+                Fire_CooldownCount = Fire_Cooldown;
+            }
+            else
+            {
+                Debug.Log("On Cooldown");
+            }
         }
-    
 
-        if(Input.GetMouseButtonDown(0))
+        if (Fire_CooldownCount > 0)
         {
-            GameObject NewBullte = Instantiate(Bullet, transform.position, Quaternion.identity);
-
-            NewBullte.GetComponent<BulletController>().isMovingLeft = isWalkLeft;
+            Fire_CooldownCount -= Time.deltaTime;
+        }
+        else
+        {
+            Debug.Log("Cooldown Finish!");
         }
 
 
         //isGrounded = Physics.Raycast(transform.position, -Vector3.up, groundCheckRange, groundLayer);
-       Debug.DrawRay(transform.position, Vector3.up * groundCheckRange);
+        Debug.DrawRay(transform.position, Vector3.up * groundCheckRange);
 
         isGrounded = Physics.CheckSphere(GroundChecker.position, groundCheckRange, groundLayer);
 
         anim.SetBool("Grounded", isGrounded);
 
-        if(isGrounded)
+        if (isGrounded)
         {
-          //  GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            //  GetComponentInChildren<SpriteRenderer>().color = Color.white;
 
-        } else
+        }
+        else
         {
             //GetComponentInChildren<SpriteRenderer>().color = Color.red;
         }
+
+
+
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -138,7 +194,7 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(InvincibilityTimer);
 
-        gameObject.layer = 10;
+        gameObject.layer = 11;
         PlayerSprite.color = Color.white;
     }
 

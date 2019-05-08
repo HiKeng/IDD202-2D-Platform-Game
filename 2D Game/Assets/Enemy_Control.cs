@@ -9,6 +9,8 @@ public class Enemy_Control : MonoBehaviour
     public bool ISWalkingLeft;
     public float WalkSpeed = 6000;
 
+    public float InvincibilityTimer = 0.25f;
+
     public float groundCheckRange = 1f;
     public LayerMask groundLayer;
     public LayerMask wallLayer;
@@ -100,5 +102,31 @@ public class Enemy_Control : MonoBehaviour
             }
 
         } 
+    }
+
+    IEnumerator EnemyTakeDamage(int damage)
+    {
+        Debug.Log("Enemy Hit");
+        HP -= damage;
+        gameObject.layer = 13;
+        EnemySprite.color = Color.gray;
+
+        yield return new WaitForSeconds(InvincibilityTimer);
+
+        EnemySprite.color = Color.white;
+    }
+
+    public void RecieveDamage(int Damage)
+    {
+        HP -= Damage;
+
+        if(HP <= 0)
+        {
+            Destroy(this.gameObject);
+            gameObject.SetActive(false);
+        } else
+        {
+            StartCoroutine("EnemyTakeDamage", 10);
+        }
     }
 }

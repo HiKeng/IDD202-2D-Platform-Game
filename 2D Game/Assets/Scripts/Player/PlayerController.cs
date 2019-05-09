@@ -6,12 +6,16 @@ public class PlayerController : MonoBehaviour
 {
     public bool isAlive = true;
 
-    public int HP = 100;
+    public int HP; 
+    public int MaxHP = 100;
     public float InvincibilityTimer = 1f;
     public float WalkSpeed = 300.5f;
     public float JumpForce = 500f;
     public float DownForce = 600f;
     public SpriteRenderer PlayerSprite;
+
+    public int MP;
+    public int MaxMP;
 
     public bool isWalkLeft = false;
 
@@ -36,17 +40,23 @@ public class PlayerController : MonoBehaviour
     public float MaxChargeTime;
     public float ChargeTimeCount;
 
+    public bool IsWon;
+    public bool IsLose;
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
         isCharging = false;
+
+        HP = MaxHP;
+        MP = MaxMP;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Fire_CooldownCount);
+        //Debug.Log(Fire_CooldownCount);
     
         if(!isAlive)
         {
@@ -141,7 +151,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                Debug.Log("On Cooldown");
+                //Debug.Log("On Cooldown");
             }
         }
 
@@ -151,7 +161,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Cooldown Finish!");
+            //Debug.Log("Cooldown Finish!");
         }
 
 
@@ -187,7 +197,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator TakeDamage(int damage)
     {
-        Debug.Log("WW");
+        //Debug.Log("WW");
         HP -= damage; // HP = HP - damage;
         gameObject.layer = 11; // PlayerInvin
         PlayerSprite.color = Color.gray;
@@ -216,6 +226,7 @@ public class PlayerController : MonoBehaviour
             Destroy(this.gameObject); //1.cause Error
             anim.SetTrigger("Death"); // 2. if you have
             isAlive = false;
+            IsLose = true;
 
             PlayerSprite.color = Color.clear; // 3.1
             gameObject.SetActive(false); // 3.2

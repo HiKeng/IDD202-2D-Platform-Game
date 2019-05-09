@@ -147,6 +147,7 @@ MonoBehaviour:
   HP: 100
   ISWalkingLeft: 1
   WalkSpeed: 6000
+  InvincibilityTimer: 0.25
   groundCheckRange: 1
   groundLayer:
     serializedVersion: 2
@@ -154,7 +155,13 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 1024
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   EnemySprite: {fileID: 5183821297159804367}
   RayOffSet: {x: -1, y: 0, z: 0}
   wallCheckRange: 1
-  Bullet: {fileID: 0}
+  EnemyCheckRange: 10
+  Bullet: {fileID: 2543967223346782713, guid: 8ed2ff4581831d941ba657e0417e37ff, type: 3}
+  CanAttack: 0
+  AttackDelay: 2

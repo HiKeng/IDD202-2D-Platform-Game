@@ -14,19 +14,23 @@ public class Enemy_Control : MonoBehaviour
     public float groundCheckRange = 1f;
     public LayerMask groundLayer;
     public LayerMask wallLayer;
+    public LayerMask PlayerLayer;
 
     public SpriteRenderer EnemySprite;
 
     public Vector3 RayOffSet = Vector3.left;
 
     public float wallCheckRange = 1f;
+    public float EnemyCheckRange = 1f;
 
     public GameObject Bullet;
+    public bool CanAttack;
+    public float AttackDelay = 2f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        CanAttack = true;
     }
 
     // Update is called once per frame
@@ -39,6 +43,17 @@ public class Enemy_Control : MonoBehaviour
         //{
         //    ISWalkingLeft = false;
         //}
+
+        if(CanAttack)
+        {
+            if(ISWalkingLeft)
+            {
+                CheckEnemy(-Vector3.right);
+            } else
+            {
+                CheckEnemy(Vector3.right);
+            }
+        }
        
 
         if (ISWalkingLeft)
@@ -102,6 +117,42 @@ public class Enemy_Control : MonoBehaviour
             }
 
         } 
+    }
+
+
+    void CheckEnemy(Vector3 direction)
+    {
+        Debug.DrawRay(transform.position, direction * EnemyCheckRange, Color.cyan);
+
+        if (Physics.Raycast(transform.position, direction, EnemyCheckRange, PlayerLayer))
+        {
+            if(CanAttack)
+            {
+                StartCoroutine("Attack", 1);
+                Attack();
+            }
+            
+        }
+    }
+
+    void Attack ()
+    {
+        StartCoroutine("SetAttackDelay", AttackDelay);
+
+        GameObject NewBullte = Instantiate(Bullet, transform.position, Quaternion.identity);
+
+        NewBullte.GetComponent<BulletController>().isMovingLeft = ISWalkingLeft;
+
+        
+
+
+    }
+
+    IEnumerator SetAttackDelay (float delay)
+    {
+        CanAttack = false; 
+        yield return new WaitForSeconds(delay);
+        CanAttack = true;
     }
 
     IEnumerator EnemyTakeDamage(int damage)

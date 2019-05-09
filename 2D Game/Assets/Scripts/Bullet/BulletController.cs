@@ -19,7 +19,7 @@ public class BulletController : MonoBehaviour
     {
         StartCoroutine("Expire", LeftTime);
 
-      //  PlayerBullet = GameObject.Find("PlayerBullet 1").GetComponent<GameObject>();
+        //  PlayerBullet = GameObject.Find("PlayerBullet 1").GetComponent<GameObject>();
 
         Bullet_Sprite = GetComponentInChildren<SpriteRenderer>();
 

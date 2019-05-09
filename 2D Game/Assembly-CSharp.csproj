@@ -60,18 +60,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Camera_Pan.cs" />
-    <Compile Include="Assets\Door_Open.cs" />
-    <Compile Include="Assets\Enemy_Control.cs" />
-    <Compile Include="Assets\Flip_Bullet.cs" />
-    <Compile Include="Assets\Follow_Player.cs" />
     <Compile Include="Assets\Scripts\Animation\LookAt.cs" />
     <Compile Include="Assets\Scripts\Bullet\BulletController.cs" />
-    <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\Loading.cs" />
+    <Compile Include="Assets\Scripts\Camera\Camera_Pan.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Camera\Follow_Player.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy_Bullet.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy_Control.cs" />
+    <Compile Include="Assets\Scripts\Level\Door_Open.cs" />
+    <Compile Include="Assets\Scripts\Loading\Loading.cs" />
     <Compile Include="Assets\Scripts\MousePosition\GetMousePosition.cs" />
     <Compile Include="Assets\Scripts\Parallax\Parallax_BG.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player\Flip_Bullet.cs" />
+    <Compile Include="Assets\Scripts\Player\Pickup_Magic.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_Controller.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Thanakom S/Desktop/2D_Game/IDD202-2D-Platform-Game/2D Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

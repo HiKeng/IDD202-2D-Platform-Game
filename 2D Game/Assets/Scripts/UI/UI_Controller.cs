@@ -6,9 +6,14 @@ using UnityEngine.UI;
 public class UI_Controller : MonoBehaviour
 {
     public Image HP_Bar;
+    public Image MP_Bar;
     public Image[] HPBlock;
     public int PlayerHP;
     public int PlayerMaxHP;
+    public float PlayerMP;
+    public int PlayerMaxMP;
+
+    public int สักอย่าง;
 
     public GameObject Player;
     public PlayerController PlayerControl;
@@ -29,6 +34,10 @@ public class UI_Controller : MonoBehaviour
             PlayerControl = Player.GetComponent<PlayerController>();
             PlayerMaxHP = PlayerControl.HP;
             PlayerHP = PlayerMaxHP;
+        
+
+            PlayerMaxMP = PlayerControl.MaxMP;
+            PlayerMP = PlayerMaxMP;
 
             //PlayerMaxHP = Player.GetComponent<PlayerController>().HP;
             //PlayerHP = PlayerMaxHP;
@@ -44,9 +53,13 @@ public class UI_Controller : MonoBehaviour
     
 
         PlayerHP = PlayerControl.HP;
+        PlayerMP = PlayerControl.MP;
 
         //HP Bar
         HP_Bar.fillAmount = (float)PlayerHP / PlayerMaxHP;
+
+        //MP Bar
+        MP_Bar.fillAmount = (float)PlayerMP / PlayerMaxMP;
 
         //HP Block
         //for (int i = 0; i < HPBlock.Length; i++)

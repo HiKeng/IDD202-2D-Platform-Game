@@ -61,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Animation\LookAt.cs" />
+    <Compile Include="Assets\Scripts\Audio\CheckDistance.cs" />
+    <Compile Include="Assets\Scripts\Audio\FadeAudio.cs" />
     <Compile Include="Assets\Scripts\Bullet\BulletController.cs" />
     <Compile Include="Assets\Scripts\Camera\Camera_Pan.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="Assets\Scripts\Player\Pickup_Magic.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Controller.cs" />
+    <Compile Include="Assets\Sound_Active.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Thanakom S/Desktop/2D_Game/IDD202-2D-Platform-Game/2D Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

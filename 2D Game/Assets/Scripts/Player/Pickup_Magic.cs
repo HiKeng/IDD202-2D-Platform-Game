@@ -7,8 +7,10 @@ public class Pickup_Magic : MonoBehaviour
 
     public bool playerIsEnter;
 
-    GameObject Player;
-    PlayerController PC;
+    public GameObject Player;
+    public PlayerController PC;
+
+    public int MPAdd;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +59,7 @@ public class Pickup_Magic : MonoBehaviour
     void PickMagic()
     {
         Debug.Log("Pick Item!");
+        PC.MP += MPAdd;
         Destroy(gameObject);
     }
 }

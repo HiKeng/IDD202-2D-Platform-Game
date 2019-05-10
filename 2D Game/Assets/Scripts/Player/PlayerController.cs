@@ -14,12 +14,13 @@ public class PlayerController : MonoBehaviour
     public float DownForce = 600f;
     public SpriteRenderer PlayerSprite;
 
-    public int MP;
+    public float MP;
     public int MaxMP;
 
     public bool isWalkLeft = false;
 
     public GameObject Bullet;
+    public GameObject SpecialBullet;
     public bool CanAttack;
 
     public Animator anim;
@@ -37,8 +38,11 @@ public class PlayerController : MonoBehaviour
     public float Fire_Cooldown;
 
     public bool isCharging = false;
+    public bool ChargeFull = false;
     public float MaxChargeTime;
     public float ChargeTimeCount;
+
+    public float MPRegenSpeed;
 
     public bool IsWon;
     public bool IsLose;
@@ -57,6 +61,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Debug.Log(Fire_CooldownCount);
+
+        MPRegen();
     
         if(!isAlive)
         {
@@ -93,14 +99,12 @@ public class PlayerController : MonoBehaviour
         //}
         if(Input.GetKey(KeyCode.LeftControl) && isGrounded == true)
         {
-            isCharging = true;
-            GetComponent<Rigidbody>().mass = 999;
+            Charge();
         }
 
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-            isCharging = false;
-            GetComponent<Rigidbody>().mass = 15;
+            CancelCharge();
 
         }
 
@@ -143,11 +147,16 @@ public class PlayerController : MonoBehaviour
         {
             if (Fire_CooldownCount <= 0)
             {
-                GameObject NewBullte = Instantiate(Bullet, Gun_Position.position, Quaternion.identity);
 
-                NewBullte.GetComponent<BulletController>().isMovingLeft = isWalkLeft;
-
-                Fire_CooldownCount = Fire_Cooldown;
+                if(isCharging)
+                {
+                    SpecialFire();
+                }
+                else
+                {
+                    NormalFire();
+                }
+                
             }
             else
             {
@@ -155,6 +164,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        // Cooldown
         if (Fire_CooldownCount > 0)
         {
             Fire_CooldownCount -= Time.deltaTime;
@@ -236,4 +246,70 @@ public class PlayerController : MonoBehaviour
             StartCoroutine("TakeDamage", 10);
         }
     }
+
+    void NormalFire()
+    {
+        if(MP >= 5)
+        {
+            GameObject NewBullte = Instantiate(Bullet, Gun_Position.position, Quaternion.identity);
+
+            NewBullte.GetComponent<BulletController>().isMovingLeft = isWalkLeft;
+
+            Fire_CooldownCount = Fire_Cooldown;
+
+            MP -= 5;
+        } else
+        {
+            //Debug.Log("MP is out");
+        }
+        
+    }
+
+    void SpecialFire()
+    {
+        if (MP >= 5)
+        {
+            GameObject SpeBullet = Instantiate(SpecialBullet, Gun_Position.position, Quaternion.identity);
+
+            SpeBullet.GetComponent<BulletController>().isMovingLeft = isWalkLeft;
+
+            Fire_CooldownCount = Fire_Cooldown;
+
+            MP -= 5;
+        }
+        else
+        {
+            Debug.Log("MP is out");
+        }
+
+    }
+
+    void MPRegen()
+    {
+        MP += Time.deltaTime * MPRegenSpeed;
+    }
+
+    void Charge()
+    {
+        isCharging = true;
+        GetComponent<Rigidbody>().mass = 999;
+    }
+
+    void CancelCharge()
+    {
+        isCharging = false;
+        GetComponent<Rigidbody>().mass = 15;
+    }
+
+    void CheckCharge()
+    {
+        if(isCharging && ChargeTimeCount < MaxChargeTime)
+        {
+            ChargeTimeCount += Time.deltaTime * 2;
+        }
+
+        //if(isCharging)
+        //    Camera.main.ScreenPointToRay()
+    }
+    
 }

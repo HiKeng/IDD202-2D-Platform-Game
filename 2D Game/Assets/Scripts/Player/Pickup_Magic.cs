@@ -15,8 +15,8 @@ public class Pickup_Magic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.Find("Player").GetComponent<GameObject>();
-        PC = GameObject.Find("Player").GetComponent<PlayerController>();
+        Player = GameObject.Find("PlayerCharacter").GetComponent<GameObject>();
+        PC = GameObject.Find("PlayerCharacter").GetComponent<PlayerController>();
         playerIsEnter = false;
     }
 

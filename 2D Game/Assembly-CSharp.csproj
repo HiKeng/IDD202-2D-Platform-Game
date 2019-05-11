@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GunPosition.cs" />
     <Compile Include="Assets\Scripts\Animation\LookAt.cs" />
     <Compile Include="Assets\Scripts\Audio\CheckDistance.cs" />
     <Compile Include="Assets\Scripts\Audio\FadeAudio.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Assets\Scripts\Camera\Camera_Pan.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Camera\Follow_Player.cs" />
+    <Compile Include="Assets\Scripts\Camera\MousePositionInWorld.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy_Bullet.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy_Control.cs" />
     <Compile Include="Assets\Scripts\Level\Door_Open.cs" />

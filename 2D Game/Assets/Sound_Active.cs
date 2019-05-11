@@ -25,7 +25,7 @@ public class Sound_Active : MonoBehaviour
 
     public void PlayBGM(int order)
     {
-        BGMList[order].Play();
+        //BGMList[order].Play();
     }
 
     public void PlaySFX(int order)

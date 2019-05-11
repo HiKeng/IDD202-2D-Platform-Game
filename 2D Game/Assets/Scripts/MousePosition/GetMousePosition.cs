@@ -5,56 +5,68 @@ using UnityEngine;
 public class GetMousePosition : MonoBehaviour
 {
 
-    public GameObject particle;
+    public Transform TestPosition;
+    public Transform Cam;
+    public float Zoffset;
 
 
-    Vector3 MousePosition = Input.mousePosition;
-
-    
-
-
-    // Start is called before the first frame update
     void Start()
     {
-        
-        MousePosition = new Vector3(0, 0, 0);
+        TestPosition = gameObject.GetComponent<Transform>();
 
-       
+        Cam = GameObject.Find("Main Camera").GetComponent<Transform>();
+
+        Zoffset = Cam.position.z;
+
     }
 
-    // Update is called once per frame
     void Update()
     {
 
+        Zoffset = Cam.position.z;
 
-        FaceMouse();
+        if(Zoffset < 0)
+        {
+            Zoffset *= -1;
+        }
 
-        //if(Input.GetButtonDown("Fire1"))
-        //{
-        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //    if (Physics.Raycast(ray))
-        //        Instantiate(particle, transform.position, transform.rotation);
+        CheckMousePosition();
 
-        //    Debug.Log("Aim");
-        //    Instantiate(particle, transform.position, transform.rotation);
+        /*if (Input.GetMouseButtonDown(1))
+        {
+            Vector3 clickPosition = -Vector3.one;
 
-        //}
+
+            clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0, 0, Zoffset));
+
+
+            /*  Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+              RaycastHit hit;
+
+              if(Physics.Raycast(ray, out hit))
+              {
+                  clickPosition = hit.point;
+              }
+
+            clickPosition.z = 0f;
+
+            TestPosition.position = clickPosition;
+
+            Debug.Log(clickPosition);
+        } */
     }
 
-    void FaceMouse()
+    void CheckMousePosition()
     {
-        MousePosition = Input.mousePosition;
-        transform.position = MousePosition;
-      // MousePosition = Camera.main.ScreenToWorldPoint(MousePosition);
+        Vector3 MousePosition = Vector3.one;
 
-        //Vector2 direction = new Vector2(
-        //    MousePosition.x - transform.position.x,
-        //    MousePosition.y - transform.position.y);
+        MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0, 0, Zoffset));
 
+        MousePosition.z = 0;
 
+        TestPosition.position = MousePosition;
 
-        //transform.up = direction;
+        //Debug.Log(MousePosition);
 
-        
     }
 }

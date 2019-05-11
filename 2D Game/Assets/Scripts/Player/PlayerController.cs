@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float JumpForce = 500f;
     public float DownForce = 600f;
     public SpriteRenderer PlayerSprite;
+    public Transform Player;
 
     public float MP;
     public int MaxMP;
@@ -51,6 +52,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
+
+        Player = gameObject.GetComponent<Transform>();
+
         isCharging = false;
 
         HP = MaxHP;
@@ -62,138 +66,138 @@ public class PlayerController : MonoBehaviour
     {
         //Debug.Log(Fire_CooldownCount);
 
-        MPRegen();
-    
-        if(!isAlive)
-        {
-            return;
-        }
+            MPRegen();
 
-        HP = Mathf.Clamp(HP, 0, 100);
-
-        //if(Input.GetKey(KeyCode.A))
-        //{
-        //    GetComponent<Rigidbody>().AddForce(Vector3.right * -WalkSpeed * Time.deltaTime);
-        //    PlayerSprite.flipX = true;
-        //    if(isGrounded == true)
-        //    {
-        //        anim.SetBool("isWalk", true);
-        //    }
-
-        //}
-
-        //if (Input.GetKey(KeyCode.D))
-        //{
-        //    GetComponent<Rigidbody>().AddForce(Vector3.right * WalkSpeed * Time.deltaTime);
-        //    PlayerSprite.flipX = false;
-
-        //    if (isGrounded == true)
-        //    {
-        //        anim.SetBool("isWalk", true);
-        //    }
-        //}
-
-        //if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
-        //{
-        //    anim.SetBool("isWalk", false);
-        //}
-        if(Input.GetKey(KeyCode.LeftControl) && isGrounded == true)
-        {
-            Charge();
-        }
-
-        if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            CancelCharge();
-
-        }
-
-        if(isCharging != true)
-        {
-            Vector3 Direction = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-            GetComponent<Rigidbody>().AddForce(Direction * WalkSpeed * Time.deltaTime, ForceMode.VelocityChange);
-
-            GetComponent<Rigidbody>().AddForce(Direction * WalkSpeed * Time.deltaTime * 2);
-            if (Direction.x < 0)
+            if (!isAlive)
             {
-                PlayerSprite.flipX = true;
-                isWalkLeft = true;
-            }
-            else if (Direction.x > 0)
-            {
-                PlayerSprite.flipX = false;
-                isWalkLeft = false;
+                return;
             }
 
-            anim.SetFloat("Speed", Mathf.Abs(Direction.x));
-            // anim.SetFloat("Attack");
+            HP = Mathf.Clamp(HP, 0, 100);
 
+            //if(Input.GetKey(KeyCode.A))
+            //{
+            //    GetComponent<Rigidbody>().AddForce(Vector3.right * -WalkSpeed * Time.deltaTime);
+            //    PlayerSprite.flipX = true;
+            //    if(isGrounded == true)
+            //    {
+            //        anim.SetBool("isWalk", true);
+            //    }
 
-            if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+            //}
+
+            //if (Input.GetKey(KeyCode.D))
+            //{
+            //    GetComponent<Rigidbody>().AddForce(Vector3.right * WalkSpeed * Time.deltaTime);
+            //    PlayerSprite.flipX = false;
+
+            //    if (isGrounded == true)
+            //    {
+            //        anim.SetBool("isWalk", true);
+            //    }
+            //}
+
+            //if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
+            //{
+            //    anim.SetBool("isWalk", false);
+            //}
+            if (Input.GetKey(KeyCode.LeftControl) && isGrounded == true)
             {
-                GetComponent<Rigidbody>().AddForce(Vector3.up * JumpForce);
+                Charge();
             }
 
-            if (Input.GetKeyDown(KeyCode.S) && isGrounded == false)
+            if (Input.GetKeyUp(KeyCode.LeftControl))
             {
-                GetComponent<Rigidbody>().AddForce(Vector3.down * DownForce);
+                CancelCharge();
+
             }
-        }
 
-        
-
-        // Fire Bullet
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (Fire_CooldownCount <= 0)
+            if (isCharging != true)
             {
+                Vector3 Direction = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+                GetComponent<Rigidbody>().AddForce(Direction * WalkSpeed * Time.deltaTime, ForceMode.VelocityChange);
 
-                if(isCharging)
+                GetComponent<Rigidbody>().AddForce(Direction * WalkSpeed * Time.deltaTime * 2);
+
+                if (Direction.x < 0)
                 {
-                    SpecialFire();
+                //PlayerSprite.flipX = true;
+                Player.localScale = new Vector3(-1f, 1, 1); 
+                    isWalkLeft = true;
+                }
+                else if (Direction.x > 0)
+                {
+                    //PlayerSprite.flipX = false;
+                Player.localScale = new Vector3(1, 1, 1);
+                isWalkLeft = false;
+                }
+
+                anim.SetFloat("Speed", Mathf.Abs(Direction.x));
+                // anim.SetFloat("Attack");
+
+
+                if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+                {
+                    GetComponent<Rigidbody>().AddForce(Vector3.up * JumpForce);
+                }
+
+                if (Input.GetKeyDown(KeyCode.S) && isGrounded == false)
+                {
+                    GetComponent<Rigidbody>().AddForce(Vector3.down * DownForce);
+                }
+            }
+
+
+
+            // Fire Bullet
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (Fire_CooldownCount <= 0)
+                {
+
+                    if (isCharging)
+                    {
+                        SpecialFire();
+                    }
+                    else
+                    {
+                        NormalFire();
+                    }
+
                 }
                 else
                 {
-                    NormalFire();
+                    //Debug.Log("On Cooldown");
                 }
-                
+            }
+
+            // Cooldown
+            if (Fire_CooldownCount > 0)
+            {
+                Fire_CooldownCount -= Time.deltaTime;
             }
             else
             {
-                //Debug.Log("On Cooldown");
+                //Debug.Log("Cooldown Finish!");
             }
-        }
-
-        // Cooldown
-        if (Fire_CooldownCount > 0)
-        {
-            Fire_CooldownCount -= Time.deltaTime;
-        }
-        else
-        {
-            //Debug.Log("Cooldown Finish!");
-        }
 
 
-        //isGrounded = Physics.Raycast(transform.position, -Vector3.up, groundCheckRange, groundLayer);
-        Debug.DrawRay(transform.position, Vector3.up * groundCheckRange);
+            //isGrounded = Physics.Raycast(transform.position, -Vector3.up, groundCheckRange, groundLayer);
+            Debug.DrawRay(transform.position, Vector3.up * groundCheckRange);
 
-        isGrounded = Physics.CheckSphere(GroundChecker.position, groundCheckRange, groundLayer);
+            isGrounded = Physics.CheckSphere(GroundChecker.position, groundCheckRange, groundLayer);
 
-        anim.SetBool("Grounded", isGrounded);
+            anim.SetBool("Grounded", isGrounded);
 
-        if (isGrounded)
-        {
-            //  GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            if (isGrounded)
+            {
+                //  GetComponentInChildren<SpriteRenderer>().color = Color.white;
 
-        }
-        else
-        {
-            //GetComponentInChildren<SpriteRenderer>().color = Color.red;
-        }
-
-
-
+            }
+            else
+            {
+                //GetComponentInChildren<SpriteRenderer>().color = Color.red;
+            }
 
     }
 
@@ -286,7 +290,16 @@ public class PlayerController : MonoBehaviour
 
     void MPRegen()
     {
-        MP += Time.deltaTime * MPRegenSpeed;
+        if(MP < MaxMP)
+        {
+            MP += Time.deltaTime * MPRegenSpeed;
+        }
+
+        if(MP > MaxMP)
+        {
+            MP = MaxMP;
+        }
+        
     }
 
     void Charge()
@@ -312,4 +325,6 @@ public class PlayerController : MonoBehaviour
         //    Camera.main.ScreenPointToRay()
     }
     
+
+
 }

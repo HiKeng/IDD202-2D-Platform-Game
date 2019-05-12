@@ -13,8 +13,6 @@ public class UI_Controller : MonoBehaviour
     public float PlayerMP;
     public int PlayerMaxMP;
 
-    public int สักอย่าง;
-
     public GameObject Player;
     public PlayerController PlayerControl;
 

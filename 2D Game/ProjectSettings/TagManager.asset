@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Audio
   - Mouse
+  - Wall
+  - Boss
+  - Floating
   layers:
   - Default
   - TransparentFX
@@ -70,4 +73,7 @@ TagManager:
     locked: 0
   - name: Lighting
     uniqueID: 473123801
+    locked: 0
+  - name: Foreground
+    uniqueID: 2058793275
     locked: 0

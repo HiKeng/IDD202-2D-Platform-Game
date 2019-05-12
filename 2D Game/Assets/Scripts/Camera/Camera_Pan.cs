@@ -6,10 +6,14 @@ public class Camera_Pan : MonoBehaviour
 {
     CameraController CC;
 
+    public int cameraNumber;
+    public int cameraType;
+
     // Start is called before the first frame update
     void Start()
     {
         CC = GameObject.Find("Main Camera").GetComponent<CameraController>();
+
     }
 
     // Update is called once per frame
@@ -22,10 +26,12 @@ public class Camera_Pan : MonoBehaviour
     {
         if(Pan.CompareTag("Player"))
         {
-            Debug.Log("Hello");
+            //Debug.Log("Hello");
 
-            CC.isFollowPlayer = false;
-            CC.panned = true;
+            CC.cameraNumber = cameraNumber;
+            CC.cameraType = cameraType;
+            //CC.isFollowPlayer = false;
+            //CC.panned = true;
         }
     }
 
@@ -33,10 +39,13 @@ public class Camera_Pan : MonoBehaviour
     {
         if (Pan.CompareTag("Player"))
         {
-            Debug.Log("Hello2");
+            //Debug.Log("Hello2");
 
-            CC.isFollowPlayer = true;
-            CC.panned = false;
+            CC.cameraType = 0;
+            CC.cameraNumber = 0;
+           // CC.isFollowPlayer = true;
+            //CC.panned = false;
+            
         }
     }
 }

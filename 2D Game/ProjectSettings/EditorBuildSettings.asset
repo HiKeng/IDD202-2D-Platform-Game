@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Test_Mechanic.unity
-    guid: b9071611d0834fb47aad119304664f6d
+    path: Assets/Scenes/Level/Level1.unity
+    guid: 8d7e84d39fd76a84e850a344112c0a5f
+  - enabled: 1
+    path: Assets/Scenes/Level/Level2.unity
+    guid: 7bccae969b55d1b48a2dd714ef7978ad
+  - enabled: 1
+    path: Assets/Scenes/UI/TitileScreen.unity
+    guid: 3fc38592f2378004fa2cf009fec30078
   m_configObjects: {}

@@ -73,5 +73,12 @@ public class Enemy_Bullet : MonoBehaviour
             Destroy(this.gameObject);
 
         }
+
+        if (EnemyBullet && other.tag == "Ground" || EnemyBullet && other.tag == "Wall")
+        {
+
+            Destroy(gameObject);
+           // Debug.Log("Destroy");
+        }
     }
 }

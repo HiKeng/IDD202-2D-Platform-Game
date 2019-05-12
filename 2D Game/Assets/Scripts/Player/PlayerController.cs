@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
     public bool IsWon;
     public bool IsLose;
 
+    public int KeyItem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -114,6 +116,8 @@ public class PlayerController : MonoBehaviour
 
             if (isCharging != true)
             {
+
+
                 Vector3 Direction = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
                 GetComponent<Rigidbody>().AddForce(Direction * WalkSpeed * Time.deltaTime, ForceMode.VelocityChange);
 
@@ -155,7 +159,7 @@ public class PlayerController : MonoBehaviour
                 if (Fire_CooldownCount <= 0)
                 {
 
-                    if (isCharging)
+                    if (isCharging && ChargeFull)
                     {
                         SpecialFire();
                     }
@@ -169,7 +173,14 @@ public class PlayerController : MonoBehaviour
                 {
                     //Debug.Log("On Cooldown");
                 }
+
+            ChargeTimeCount = 0;
             }
+
+            if(ChargeTimeCount < MaxChargeTime)
+        {
+            ChargeFull = false;
+        }
 
             // Cooldown
             if (Fire_CooldownCount > 0)
@@ -290,15 +301,20 @@ public class PlayerController : MonoBehaviour
 
     void MPRegen()
     {
-        if(MP < MaxMP)
-        {
-            MP += Time.deltaTime * MPRegenSpeed;
-        }
 
-        if(MP > MaxMP)
+        if(isCharging == false)
         {
-            MP = MaxMP;
+            if (MP < MaxMP)
+            {
+                MP += Time.deltaTime * MPRegenSpeed;
+            }
+
+            if (MP > MaxMP)
+            {
+                MP = MaxMP;
+            }
         }
+        
         
     }
 
@@ -306,12 +322,26 @@ public class PlayerController : MonoBehaviour
     {
         isCharging = true;
         GetComponent<Rigidbody>().mass = 999;
+
+        if(ChargeTimeCount < MaxChargeTime)
+        {
+            ChargeTimeCount += Time.deltaTime;
+
+        } else
+        {
+            ChargeFull = true;
+        }
+     
+        
+
     }
 
     void CancelCharge()
     {
         isCharging = false;
         GetComponent<Rigidbody>().mass = 15;
+
+        ChargeTimeCount = 0;
     }
 
     void CheckCharge()

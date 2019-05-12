@@ -11,11 +11,14 @@ public class Pickup_Magic : MonoBehaviour
     public PlayerController PC;
 
     public int MPAdd;
+    public int HPAdd;
+    public int KeyAdd;
 
     // Start is called before the first frame update
     void Start()
     {
         Player = GameObject.Find("PlayerCharacter").GetComponent<GameObject>();
+        Player = GameObject.FindGameObjectWithTag("Player");
         PC = GameObject.Find("PlayerCharacter").GetComponent<PlayerController>();
         playerIsEnter = false;
     }
@@ -28,7 +31,7 @@ public class Pickup_Magic : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.E))
             {
-                PickMagic();
+                PickItem();
             }
         }
 
@@ -39,7 +42,7 @@ public class Pickup_Magic : MonoBehaviour
         if(magic.CompareTag("Player"))
         {
             playerIsEnter = true;
-            Debug.Log("Enter");
+           // Debug.Log("Enter");
         }
 
         
@@ -50,16 +53,18 @@ public class Pickup_Magic : MonoBehaviour
         if (magic.CompareTag("Player"))
         {
             playerIsEnter = false;
-            Debug.Log("Exit");
+           // Debug.Log("Exit");
         }
 
         
     }
 
-    void PickMagic()
+    void PickItem()
     {
-        Debug.Log("Pick Item!");
+       // Debug.Log("Pick Item!");
         PC.MP += MPAdd;
+        PC.HP += HPAdd;
+        PC.KeyItem += KeyAdd;
         Destroy(gameObject);
     }
 }

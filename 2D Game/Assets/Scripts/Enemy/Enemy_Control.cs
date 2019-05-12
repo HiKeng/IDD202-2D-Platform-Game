@@ -141,7 +141,7 @@ public class Enemy_Control : MonoBehaviour
 
         GameObject NewBullte = Instantiate(Bullet, transform.position, Quaternion.identity);
 
-        NewBullte.GetComponent<BulletController>().isMovingLeft = ISWalkingLeft;
+        NewBullte.GetComponent<Enemy_Bullet>().isMovingLeft = ISWalkingLeft;
 
         
 
@@ -157,7 +157,7 @@ public class Enemy_Control : MonoBehaviour
 
     IEnumerator EnemyTakeDamage(int damage)
     {
-        Debug.Log("Enemy Hit");
+        //Debug.Log("Enemy Hit");
         HP -= damage;
         gameObject.layer = 13;
         EnemySprite.color = Color.gray;

@@ -30,7 +30,7 @@ public class BulletController : MonoBehaviour
 
         isShoot = true;
 
-        MousePosition = GameObject.Find("MousePosition").GetComponent<Transform>();
+       // MousePosition = GameObject.Find("MousePosition").GetComponent<Transform>();
 
         PC = GameObject.Find("PlayerCharacter").GetComponent<PlayerController>();
 
@@ -87,14 +87,14 @@ public class BulletController : MonoBehaviour
                 {
                     rb.AddForce(Vector3.left * Time.deltaTime * Speed);
 
-                    Debug.Log("Shoot");
-                    //Bullet_Sprite.flipX = true;
+                    //Debug.Log("Shoot");
+                    Bullet_Sprite.flipX = true;
                 }
                 else
                 {
                     rb.AddForce(Vector3.right * Time.deltaTime * Speed);
-                    Debug.Log("Shoot");
-                    //Bullet_Sprite.flipX = false;
+                   // Debug.Log("Shoot");
+                    Bullet_Sprite.flipX = false;
                 }
             }
 
@@ -126,7 +126,14 @@ public class BulletController : MonoBehaviour
 
         void OnTriggerEnter(Collider other)
         {
-            if (PlayerBullet && other.tag == "Enemy")
+            if (PlayerBullet && other.tag == "Ground" || PlayerBullet && other.tag == "Wall")
+             {
+
+            Destroy(gameObject);
+            //Debug.Log("Destroy");
+            }
+
+        if (PlayerBullet && other.tag == "Enemy" || PlayerBullet && other.tag == "Boss")
             {
                 //Deal Damage to Enemy
                 other.SendMessage("RecieveDamage", Damage);
@@ -141,5 +148,9 @@ public class BulletController : MonoBehaviour
                 Destroy(this.gameObject);
 
             }
+
+            
+
+
         }
 }

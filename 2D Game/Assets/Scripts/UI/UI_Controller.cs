@@ -13,6 +13,8 @@ public class UI_Controller : MonoBehaviour
     public float PlayerMP;
     public int PlayerMaxMP;
 
+    public GameObject RetryScreen;
+
     public GameObject Player;
     public PlayerController PlayerControl;
 
@@ -22,10 +24,13 @@ public class UI_Controller : MonoBehaviour
     public GameObject WinStage;
     public GameObject LoseStage;
 
+    public int Count;
+
     // Start is called before the first frame update
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+
 
         if (Player)
         {
@@ -47,7 +52,15 @@ public class UI_Controller : MonoBehaviour
 
        // WinStage.SetActive(PlayerControl.IsWon);
         //LoseStage.SetActive(!PlayerControl.isAlive);
-
+        if(PlayerControl.isAlive == false)
+        {
+            if(Count == 0)
+            {
+                GameObject Retry = Instantiate(RetryScreen, transform.position, Quaternion.identity);
+                Count++;
+            }
+           
+        }
     
 
         PlayerHP = PlayerControl.HP;

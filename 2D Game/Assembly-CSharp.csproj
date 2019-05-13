@@ -60,8 +60,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Audio_Manager.cs" />
     <Compile Include="Assets\Delay.cs" />
     <Compile Include="Assets\Enter_BossRoom.cs" />
+    <Compile Include="Assets\Fadein.cs" />
     <Compile Include="Assets\isWin.cs" />
     <Compile Include="Assets\Scripts\Animation\LookAt.cs" />
     <Compile Include="Assets\Scripts\Audio\CheckDistance.cs" />
@@ -89,6 +91,8 @@
     <Compile Include="Assets\Scripts\Retry.cs" />
     <Compile Include="Assets\Scripts\Sound_Active.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Controller.cs" />
+    <Compile Include="Assets\Sound.cs" />
+    <Compile Include="Assets\Start.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Thanakom S/Desktop/2D_Game/IDD202-2D-Platform-Game/2D Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

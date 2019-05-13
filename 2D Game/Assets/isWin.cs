@@ -26,7 +26,7 @@ public class isWin : MonoBehaviour
         if(BC.isAlive == false)
         {
             StageClear = true;
-            Debug.Log("asd");
+            //Debug.Log("asd");
         }
 
 

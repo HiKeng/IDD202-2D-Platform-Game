@@ -158,6 +158,7 @@ public class Enemy_Control : MonoBehaviour
     IEnumerator EnemyTakeDamage(int damage)
     {
         //Debug.Log("Enemy Hit");
+
         HP -= damage;
         gameObject.layer = 13;
         EnemySprite.color = Color.gray;

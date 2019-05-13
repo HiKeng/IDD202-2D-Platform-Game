@@ -18,6 +18,11 @@ public class Enemy_Bullet : MonoBehaviour
 
     SpriteRenderer Bullet_Sprite;
 
+
+    public int BlustNum;
+    public GameObject[] BlustList;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,7 +67,9 @@ public class Enemy_Bullet : MonoBehaviour
         {
             //Deal Damage to Enemy
             other.SendMessage("RecieveDamage", Damage);
+            BlustEffect();
             Destroy(this.gameObject);
+
 
         }
 
@@ -70,15 +77,26 @@ public class Enemy_Bullet : MonoBehaviour
         {
             //Deal Damage to Player
             other.SendMessage("RecieveDamage", Damage);
+            BlustEffect();
             Destroy(this.gameObject);
 
         }
 
         if (EnemyBullet && other.tag == "Ground" || EnemyBullet && other.tag == "Wall")
         {
-
+            BlustEffect();
             Destroy(gameObject);
            // Debug.Log("Destroy");
         }
+
+        
+
+    }
+
+    void BlustEffect()
+    {
+        GameObject blustEffect = Instantiate(BlustList[BlustNum], transform.position, Quaternion.identity);
+
+        Destroy(blustEffect, 3f);
     }
 }

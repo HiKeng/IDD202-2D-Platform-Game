@@ -677,6 +677,7 @@ MonoBehaviour:
   PlayerMaxHP: 100
   PlayerMP: 0
   PlayerMaxMP: 100
+  RetryScreen: {fileID: 0}
   Player: {fileID: 0}
   PlayerControl: {fileID: 0}
   FilledHeart: {fileID: 0}

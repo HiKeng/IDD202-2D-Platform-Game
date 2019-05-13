@@ -133,6 +133,8 @@ public class Boss_Bullet : MonoBehaviour
             Shoot1TimeNum++;
         }
 
+        StartCoroutine("Expire", 3);
+
         /*if (Shoot1TimeCount < 0.5 || Shoot1TimeCount > 0.5 && Shoot1TimeCount < 1.00 || Shoot1TimeCount >= 1.00)
         {
             if(Shoot1TimeNum < 3)

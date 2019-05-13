@@ -197,6 +197,9 @@ MonoBehaviour:
   MousePosition: {fileID: 0}
   BulletShoot: 0
   isShoot: 0
+  BlustNum: 0
+  BlustList:
+  - {fileID: 6182884692122737836, guid: 4ed46d1a19e7a7d4e92f72a267aece72, type: 3}
 --- !u!54 &1654457866
 Rigidbody:
   m_ObjectHideFlags: 0

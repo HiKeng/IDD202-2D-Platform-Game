@@ -24,6 +24,9 @@ public class BulletController : MonoBehaviour
 
     public bool isShoot = false;
 
+    public int BlustNum;
+    public GameObject[] BlustList;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -128,29 +131,38 @@ public class BulletController : MonoBehaviour
         {
             if (PlayerBullet && other.tag == "Ground" || PlayerBullet && other.tag == "Wall")
              {
-
+            BlustEffect();
             Destroy(gameObject);
             //Debug.Log("Destroy");
             }
 
         if (PlayerBullet && other.tag == "Enemy" || PlayerBullet && other.tag == "Boss")
             {
-                //Deal Damage to Enemy
-                other.SendMessage("RecieveDamage", Damage);
+            //Deal Damage to Enemy
+            BlustEffect();
+            other.SendMessage("RecieveDamage", Damage);
                 Destroy(this.gameObject);
 
             }
 
             if (!PlayerBullet && other.tag != "Player")
             {
-                //Deal Damage to Player
-                other.SendMessage("RecieveDamage", Damage);
+            //Deal Damage to Player
+            BlustEffect();
+            other.SendMessage("RecieveDamage", Damage);
                 Destroy(this.gameObject);
 
             }
 
-            
+        
 
 
         }
+
+    void BlustEffect()
+    {
+        GameObject blustEffect = Instantiate(BlustList[BlustNum], transform.position, Quaternion.identity);
+
+        Destroy(blustEffect, 3f);
+    }
 }

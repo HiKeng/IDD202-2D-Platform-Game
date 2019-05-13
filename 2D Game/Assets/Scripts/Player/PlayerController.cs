@@ -72,7 +72,9 @@ public class PlayerController : MonoBehaviour
 
             if (!isAlive)
             {
-                return;
+            
+
+            return;
             }
 
             HP = Mathf.Clamp(HP, 0, 100);
@@ -216,7 +218,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.transform.tag == "Enemy")
         {
-            StartCoroutine("TakeDamage", 10);
+            RecieveDamage(10);
         }
     }
 
@@ -244,17 +246,14 @@ public class PlayerController : MonoBehaviour
     }
 
     public void RecieveDamage(int Damage)
-    {
+    { 
         HP -= Damage;
         if(HP <= 0)
         {
-            Destroy(this.gameObject); //1.cause Error
-            anim.SetTrigger("Death"); // 2. if you have
-            isAlive = false;
-            IsLose = true;
+            Death();
+            
 
-            PlayerSprite.color = Color.clear; // 3.1
-            gameObject.SetActive(false); // 3.2
+            
 
         } else
         {
@@ -294,7 +293,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Debug.Log("MP is out");
+           // Debug.Log("MP is out");
         }
 
     }
@@ -354,7 +353,21 @@ public class PlayerController : MonoBehaviour
         //if(isCharging)
         //    Camera.main.ScreenPointToRay()
     }
-    
 
+    void Death()
+    {
+        StartCoroutine("WaitingDeath");
+        Destroy(PlayerSprite); //1.cause Error
+        //anim.SetTrigger("Death"); // 2. if you have
+        isAlive = false;
+        IsLose = true;
+    }
+
+    IEnumerator WaitingDeath()
+    {
+        yield return new WaitForSeconds(5);
+        PlayerSprite.color = Color.clear; // 3.1
+        gameObject.SetActive(false); // 3.2
+    }
 
 }

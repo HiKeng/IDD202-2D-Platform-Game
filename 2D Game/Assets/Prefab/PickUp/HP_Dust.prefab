@@ -270,7 +270,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   PC: {fileID: 0}
   MPAdd: 0
-  HPAdd: 10
+  HPAdd: 40
   KeyAdd: 0
 --- !u!95 &4832228777401860345
 Animator:

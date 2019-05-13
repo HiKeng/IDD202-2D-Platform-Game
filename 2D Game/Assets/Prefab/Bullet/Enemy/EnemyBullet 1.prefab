@@ -192,6 +192,9 @@ MonoBehaviour:
   EnemyBullet: {fileID: 2543967223346782713}
   rb: {fileID: 4606283290784924568}
   Enemy: {fileID: 5183821297159804363, guid: f57b85aa2d3cd4449941c60b62f746b3, type: 3}
+  BlustNum: 0
+  BlustList:
+  - {fileID: 6182884692122737836, guid: a23a70a05ad624a41b573e66eb480a4d, type: 3}
 --- !u!54 &4606283290784924568
 Rigidbody:
   m_ObjectHideFlags: 0

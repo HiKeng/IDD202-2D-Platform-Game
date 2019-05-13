@@ -40,6 +40,11 @@ public class Boss_Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(MovementNumber == -1)
+        {
+            Move22();
+        }
+
         if (MovementNumber == 0)
         {
             Move0();
@@ -76,6 +81,12 @@ public class Boss_Bullet : MonoBehaviour
             tagged = true;
            // Destroy(BulletCollider);
         }
+    }
+
+    
+   void Move22()
+    {
+        StartCoroutine("Expire", 2);
     }
 
     void Move0()

@@ -7,6 +7,7 @@ Assets/Scenes/Level/Level1.unity
 Assets/Scenes/Level/Level2.unity
 SceneListEnd?
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
+054c11ebe7357ca64685056210b17e5a Assembly-CSharp.dll:.Fadein
 01aa15e337e3a9c62f15153dfac6d589 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 06f0fef534ca4c1d6064fd77a26bf722 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -122,6 +123,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 7569fdeb7ba95e72aa64096060d18973 Assembly-CSharp.dll:.GetMousePosition
 f0afa7ea1877cc7f318743d4b25d5cde Assembly-CSharp.dll:.CheckDistance
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Start
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 d917d5e2db21fa0b3ba79b47d3d9addb Assembly-CSharp.dll:.Enemy_Bullet
@@ -138,6 +140,7 @@ b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 ea414503ed1a06a49dfd4ad6a3d4d23a Assembly-CSharp.dll:.UI_Controller
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
+4e0392d9692377a3ccb8f056be112158 Assembly-CSharp.dll:.Audio_Manager
 ec0021064e603e51fd4299d0295d3bfc Assembly-CSharp.dll:.Delay
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -187,6 +190,3 @@ d7ebd98d0203e63449bdaec07e36fece Assembly-CSharp.dll:.Enter_BossRoom
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 c5865541a6cf53a6f9749749cf703a77 Assembly-CSharp.dll:.FadeAudio
 b308999fd68871eda0accf341e1e8f17 Assembly-CSharp.dll:.CameraController
-4e0392d9692377a3ccb8f056be112158 Assembly-CSharp.dll:.Audio_Manager
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Start
-054c11ebe7357ca64685056210b17e5a Assembly-CSharp.dll:.Fadein
